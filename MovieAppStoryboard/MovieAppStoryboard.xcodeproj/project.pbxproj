@@ -124,12 +124,9 @@
 		684FEAD7252D76CD00EA038C /* MovieAppStoryboard */ = {
 			isa = PBXGroup;
 			children = (
-				684FEAD8252D76CD00EA038C /* AppDelegate.swift */,
-				684FEAE1252D76CF00EA038C /* Assets.xcassets */,
-				684FEAE3252D76CF00EA038C /* LaunchScreen.storyboard */,
-				684FEAE6252D76CF00EA038C /* Info.plist */,
-				684FEB38252D806800EA038C /* AppFlowNavigation.swift */,
-				684FEB3C252D810B00EA038C /* AppAppearance.swift */,
+				684FEBF6252ECD0500EA038C /* Presentation */,
+				684FEBF5252ECAF000EA038C /* Resource */,
+				684FEBF0252ECA4800EA038C /* Application */,
 			);
 			path = MovieAppStoryboard;
 			sourceTree = "<group>";
@@ -165,6 +162,57 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		684FEBF0252ECA4800EA038C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				684FEB3C252D810B00EA038C /* AppAppearance.swift */,
+				684FEB38252D806800EA038C /* AppFlowNavigation.swift */,
+				684FEAD8252D76CD00EA038C /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		684FEBF5252ECAF000EA038C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				684FEAE3252D76CF00EA038C /* LaunchScreen.storyboard */,
+				684FEAE6252D76CF00EA038C /* Info.plist */,
+				684FEAE1252D76CF00EA038C /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		684FEBF6252ECD0500EA038C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				684FEBF7252ECFF000EA038C /* MovieList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		684FEBF7252ECFF000EA038C /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				684FEBFA252ED01C00EA038C /* View */,
+				684FEBF8252ED00C00EA038C /* ViewModel */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		684FEBF8252ED00C00EA038C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		684FEBFA252ED01C00EA038C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,10 +529,13 @@
 		684FEB00252D76CF00EA038C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_BASE_URL = "https://api.themoviedb.org";
+				API_KEY = e17c2715face752d9ed1a2a0054aa7d6;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLLWK6NGJ9;
+				IMAGE_BASE_URL = "https://image.tmdb.org";
 				INFOPLIST_FILE = MovieAppStoryboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,10 +551,13 @@
 		684FEB01252D76CF00EA038C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_BASE_URL = "https://api.themoviedb.org";
+				API_KEY = e17c2715face752d9ed1a2a0054aa7d6;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLLWK6NGJ9;
+				IMAGE_BASE_URL = "https://image.tmdb.org";
 				INFOPLIST_FILE = MovieAppStoryboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
