@@ -12,7 +12,8 @@ import SwiftyBeaver
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let log = SwiftyBeaver.self
-//    let appDIContainer = AppDIContainer()
+    let bioLogin = BioLoginLogic()
+    let appContainer = AppContainerDI()
     var appFlowNavigation: AppFlowNavigation?
     var window: UIWindow?
 
@@ -23,8 +24,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
 
         window?.rootViewController = navigationController
-        appFlowNavigation = AppFlowNavigation(navigationController: navigationController) // ,appDIContainer: appDIContainer)
+        appFlowNavigation = AppFlowNavigation(navigationController: navigationController ,appContainer: appContainer)
         appFlowNavigation?.start()
+        let bioType = bioLogin.canevaluateBiometrics()
+        if(bioType != BiometicType.NONE || bioType != BiometicType.UNKNOWN){
+            bioLogin.authContext
+                .evaluatePolicy(
+                    .deviceOwnerAuthentication,
+                    localizedReason: bioType == BiometicType.FINGER ? "Touch ID를 사용합니다." : "Face ID를 사용합니다." ,
+                    reply:
+                    { success , error in
+                        if success {
+                            self.log.debug("Login Success")
+                        } else {
+                            self.log.debug("Login Failed")
+                        }
+                    })
+        }
         window?.makeKeyAndVisible()
         return true
     }

@@ -16,6 +16,17 @@
 		684FEB22252D774E00EA038C /* ProxyModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 684FEB1F252D773D00EA038C /* ProxyModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		684FEB39252D806800EA038C /* AppFlowNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEB38252D806800EA038C /* AppFlowNavigation.swift */; };
 		684FEB3D252D810B00EA038C /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEB3C252D810B00EA038C /* AppAppearance.swift */; };
+		684FEC02252ED0D900EA038C /* MovieListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684FEC01252ED0D900EA038C /* MovieListViewController.storyboard */; };
+		684FEC07252ED0FD00EA038C /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC06252ED0FD00EA038C /* MovieListViewController.swift */; };
+		684FEC0F252ED1C500EA038C /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC0E252ED1C500EA038C /* StoryboardInstantiable.swift */; };
+		684FEC15252ED1D900EA038C /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC14252ED1D900EA038C /* Alertable.swift */; };
+		684FEC20252ED7E000EA038C /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC1F252ED7E000EA038C /* MovieListTableViewController.swift */; };
+		684FEC29252ED8AF00EA038C /* MovieListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC28252ED8AF00EA038C /* MovieListItemCell.swift */; };
+		684FEC302534121400EA038C /* BioLoginLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC2F2534121400EA038C /* BioLoginLogic.swift */; };
+		684FEC372534138300EA038C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC362534138300EA038C /* Constants.swift */; };
+		684FEC3B253413A600EA038C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC3A253413A600EA038C /* Enums.swift */; };
+		684FEC41253415FF00EA038C /* AppConfigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC40253415FF00EA038C /* AppConfigration.swift */; };
+		684FEC46253416E000EA038C /* AppContainerDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FEC45253416E000EA038C /* AppContainerDI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +82,17 @@
 		684FEB1A252D773D00EA038C /* ProxyModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProxyModule.xcodeproj; path = ../ProxyModule/ProxyModule.xcodeproj; sourceTree = "<group>"; };
 		684FEB38252D806800EA038C /* AppFlowNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowNavigation.swift; sourceTree = "<group>"; };
 		684FEB3C252D810B00EA038C /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		684FEC01252ED0D900EA038C /* MovieListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieListViewController.storyboard; sourceTree = "<group>"; };
+		684FEC06252ED0FD00EA038C /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		684FEC0E252ED1C500EA038C /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		684FEC14252ED1D900EA038C /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		684FEC1F252ED7E000EA038C /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
+		684FEC28252ED8AF00EA038C /* MovieListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItemCell.swift; sourceTree = "<group>"; };
+		684FEC2F2534121400EA038C /* BioLoginLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioLoginLogic.swift; sourceTree = "<group>"; };
+		684FEC362534138300EA038C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		684FEC3A253413A600EA038C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		684FEC40253415FF00EA038C /* AppConfigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigration.swift; sourceTree = "<group>"; };
+		684FEC45253416E000EA038C /* AppContainerDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerDI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +146,9 @@
 		684FEAD7252D76CD00EA038C /* MovieAppStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				684FEBF0252ECA4800EA038C /* Application */,
 				684FEBF6252ECD0500EA038C /* Presentation */,
 				684FEBF5252ECAF000EA038C /* Resource */,
-				684FEBF0252ECA4800EA038C /* Application */,
 			);
 			path = MovieAppStoryboard;
 			sourceTree = "<group>";
@@ -167,9 +189,11 @@
 		684FEBF0252ECA4800EA038C /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				684FEC44253416C800EA038C /* DI */,
 				684FEB3C252D810B00EA038C /* AppAppearance.swift */,
 				684FEB38252D806800EA038C /* AppFlowNavigation.swift */,
 				684FEAD8252D76CD00EA038C /* AppDelegate.swift */,
+				684FEC40253415FF00EA038C /* AppConfigration.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -187,6 +211,7 @@
 		684FEBF6252ECD0500EA038C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				684FEC0C252ED1AD00EA038C /* Utils */,
 				684FEBF7252ECFF000EA038C /* MovieList */,
 			);
 			path = Presentation;
@@ -211,8 +236,72 @@
 		684FEBFA252ED01C00EA038C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				684FEC01252ED0D900EA038C /* MovieListViewController.storyboard */,
+				684FEC06252ED0FD00EA038C /* MovieListViewController.swift */,
+				684FEC1E252ED7C000EA038C /* MovieListTableView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		684FEC0C252ED1AD00EA038C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				684FEC352534137500EA038C /* Commons */,
+				684FEC2E253411E300EA038C /* BioLogin */,
+				684FEC0D252ED1B600EA038C /* Protocols */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		684FEC0D252ED1B600EA038C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				684FEC0E252ED1C500EA038C /* StoryboardInstantiable.swift */,
+				684FEC14252ED1D900EA038C /* Alertable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		684FEC1E252ED7C000EA038C /* MovieListTableView */ = {
+			isa = PBXGroup;
+			children = (
+				684FEC1F252ED7E000EA038C /* MovieListTableViewController.swift */,
+				684FEC27252ED89300EA038C /* Cell */,
+			);
+			path = MovieListTableView;
+			sourceTree = "<group>";
+		};
+		684FEC27252ED89300EA038C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				684FEC28252ED8AF00EA038C /* MovieListItemCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		684FEC2E253411E300EA038C /* BioLogin */ = {
+			isa = PBXGroup;
+			children = (
+				684FEC2F2534121400EA038C /* BioLoginLogic.swift */,
+			);
+			path = BioLogin;
+			sourceTree = "<group>";
+		};
+		684FEC352534137500EA038C /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				684FEC362534138300EA038C /* Constants.swift */,
+				684FEC3A253413A600EA038C /* Enums.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		684FEC44253416C800EA038C /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				684FEC45253416E000EA038C /* AppContainerDI.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684FEC02252ED0D900EA038C /* MovieListViewController.storyboard in Resources */,
 				684FEAE5252D76CF00EA038C /* LaunchScreen.storyboard in Resources */,
 				684FEAE2252D76CF00EA038C /* Assets.xcassets in Resources */,
 			);
@@ -361,9 +451,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684FEC15252ED1D900EA038C /* Alertable.swift in Sources */,
+				684FEC302534121400EA038C /* BioLoginLogic.swift in Sources */,
 				684FEB3D252D810B00EA038C /* AppAppearance.swift in Sources */,
+				684FEC46253416E000EA038C /* AppContainerDI.swift in Sources */,
 				684FEAD9252D76CD00EA038C /* AppDelegate.swift in Sources */,
+				684FEC41253415FF00EA038C /* AppConfigration.swift in Sources */,
+				684FEC0F252ED1C500EA038C /* StoryboardInstantiable.swift in Sources */,
+				684FEC372534138300EA038C /* Constants.swift in Sources */,
 				684FEB39252D806800EA038C /* AppFlowNavigation.swift in Sources */,
+				684FEC29252ED8AF00EA038C /* MovieListItemCell.swift in Sources */,
+				684FEC20252ED7E000EA038C /* MovieListTableViewController.swift in Sources */,
+				684FEC07252ED0FD00EA038C /* MovieListViewController.swift in Sources */,
+				684FEC3B253413A600EA038C /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +636,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLLWK6NGJ9;
 				IMAGE_BASE_URL = "https://image.tmdb.org";
-				INFOPLIST_FILE = MovieAppStoryboard/Info.plist;
+				INFOPLIST_FILE = MovieAppStoryboard/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,7 +658,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLLWK6NGJ9;
 				IMAGE_BASE_URL = "https://image.tmdb.org";
-				INFOPLIST_FILE = MovieAppStoryboard/Info.plist;
+				INFOPLIST_FILE = MovieAppStoryboard/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
