@@ -1,0 +1,6 @@
+framework module ProxyModule {
+  umbrella header "ProxyModule.h"
+
+  export *
+  module * { export * }
+}
