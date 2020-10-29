@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		683FA3E325380DD80025DA5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683FA3E225380DD80025DA5D /* AppDelegate.swift */; };
 		683FA3E525380DD80025DA5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683FA3E425380DD80025DA5D /* SceneDelegate.swift */; };
-		683FA3E725380DD80025DA5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683FA3E625380DD80025DA5D /* ViewController.swift */; };
+		683FA3E725380DD80025DA5D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683FA3E625380DD80025DA5D /* HomeController.swift */; };
 		683FA3EA25380DD80025DA5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683FA3E825380DD80025DA5D /* Main.storyboard */; };
 		683FA3EC25380DDA0025DA5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683FA3EB25380DDA0025DA5D /* Assets.xcassets */; };
 		683FA3EF25380DDA0025DA5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683FA3ED25380DDA0025DA5D /* LaunchScreen.storyboard */; };
@@ -17,6 +17,7 @@
 		683FA40525380DDA0025DA5D /* NoStoryBoardAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683FA40425380DDA0025DA5D /* NoStoryBoardAppUITests.swift */; };
 		683FA45B253810E00025DA5D /* ProxyModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683FA459253810D00025DA5D /* ProxyModule.framework */; };
 		683FA45C253810E00025DA5D /* ProxyModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 683FA459253810D00025DA5D /* ProxyModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		68B38851254AABCA00C06313 /* ImageItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B38850254AABCA00C06313 /* ImageItemViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +62,7 @@
 		683FA3DF25380DD80025DA5D /* NoStoryBoardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryBoardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683FA3E225380DD80025DA5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		683FA3E425380DD80025DA5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		683FA3E625380DD80025DA5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		683FA3E625380DD80025DA5D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		683FA3E925380DD80025DA5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		683FA3EB25380DDA0025DA5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		683FA3EE25380DDA0025DA5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		683FA40425380DDA0025DA5D /* NoStoryBoardAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStoryBoardAppUITests.swift; sourceTree = "<group>"; };
 		683FA40625380DDA0025DA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		683FA454253810D00025DA5D /* ProxyModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProxyModule.xcodeproj; path = ../ProxyModule/ProxyModule.xcodeproj; sourceTree = "<group>"; };
+		68B38850254AABCA00C06313 /* ImageItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItemViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,11 +130,12 @@
 			children = (
 				683FA3E225380DD80025DA5D /* AppDelegate.swift */,
 				683FA3E425380DD80025DA5D /* SceneDelegate.swift */,
-				683FA3E625380DD80025DA5D /* ViewController.swift */,
+				683FA3E625380DD80025DA5D /* HomeController.swift */,
 				683FA3E825380DD80025DA5D /* Main.storyboard */,
 				683FA3EB25380DDA0025DA5D /* Assets.xcassets */,
 				683FA3ED25380DDA0025DA5D /* LaunchScreen.storyboard */,
 				683FA3F025380DDA0025DA5D /* Info.plist */,
+				68B38850254AABCA00C06313 /* ImageItemViewCell.swift */,
 			);
 			path = NoStoryBoardApp;
 			sourceTree = "<group>";
@@ -317,9 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				683FA3E725380DD80025DA5D /* ViewController.swift in Sources */,
+				683FA3E725380DD80025DA5D /* HomeController.swift in Sources */,
 				683FA3E325380DD80025DA5D /* AppDelegate.swift in Sources */,
 				683FA3E525380DD80025DA5D /* SceneDelegate.swift in Sources */,
+				68B38851254AABCA00C06313 /* ImageItemViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,8 +499,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MLLWK6NGJ9;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -508,6 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.com.ironelder.NoStoryBoardApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -518,8 +524,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MLLWK6NGJ9;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -531,6 +538,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.com.ironelder.NoStoryBoardApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
