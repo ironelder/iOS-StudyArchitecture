@@ -8,6 +8,11 @@
 import UIKit
 
 class ImageItemViewCell: UICollectionViewCell {
+    
+    let imageView = UIImageView()
+    let profileImageView = UIImageView()
+    let profileIntroView = UILabel()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializedCell()
@@ -17,11 +22,10 @@ class ImageItemViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initializedCell(){
+    private func initializedCell(){
         backgroundColor = UIColor.gray
         
         // MainImage
-        let imageView = UIImageView()
         imageView.image = UIImage(named: "teble")
         imageView.backgroundColor = UIColor.blue
         addSubview(imageView)
@@ -32,7 +36,6 @@ class ImageItemViewCell: UICollectionViewCell {
         imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6, constant: -10).isActive = true
         
         // Profile Image
-        let profileImageView = UIImageView()
         profileImageView.image = UIImage(named: "snow")
         profileImageView.backgroundColor = UIColor.orange
         addSubview(profileImageView)
@@ -43,7 +46,6 @@ class ImageItemViewCell: UICollectionViewCell {
         profileImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
         
         // Profile Intro
-        let profileIntroView = UILabel()
         profileIntroView.numberOfLines = 0
         profileIntroView.text = "Another way to put it; you can’t attach your hand to someone else’s hand unless they are in the room with you. The room being a UIView subview hierarchy, and our hands being either a top, bottom, leading, or trailing NSLayoutConstraint."
         profileIntroView.backgroundColor = UIColor.green
@@ -53,6 +55,13 @@ class ImageItemViewCell: UICollectionViewCell {
         profileIntroView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10).isActive = true
         profileIntroView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         profileIntroView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        
+    }
+    
+    func setData(_ data: TableDataModel) {
+        imageView.image = UIImage(named: data.titleImageName)
+        profileImageView.image = UIImage(named: data.profileImageName)
+        profileIntroView.text = data.profileIntro
         
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeController: UIViewController {
 
@@ -15,6 +16,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Home"
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#E23F61")
         view?.backgroundColor = UIColor.white
         collectionViewInitialized()
     }
@@ -33,10 +35,19 @@ class HomeController: UIViewController {
         collectionView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         
-        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CELL")
         collectionView?.register(ImageItemViewCell.self, forCellWithReuseIdentifier: "CustomCell")
         collectionView?.dataSource = self
         collectionView?.delegate = self
+    }
+    
+    fileprivate func getMovieData(){
+        let headers: HTTPHeaders = [
+            "Authorization": "Basic VXNlcm5hbWU6UGFzc3dvcmQ=",
+            "Accept": "application/json"
+        ]
+        AF.request("https://httpbin.org/headers", headers: headers).responseJSON { response in
+            debugPrint(response)
+        }
     }
 
 }
@@ -46,22 +57,14 @@ extension HomeController: UICollectionViewDataSource {
         return items.count * 5
     }
     
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath)
-//        let imageView = UIImageView(image: UIImage(named: items[indexPath.row]))
-//        cell.addSubview(imageView)
-//        cell.clipsToBounds = true
-//        imageView.contentMode = .scaleToFill
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 0).isActive = true
-//        imageView.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
-//        imageView.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
-//        imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: 0).isActive = true
-//        return cell
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as? ImageItemViewCell else {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath)
+        }
+        
+        let model = TableDataModel(titleImageName: items.randomElement() ?? "etc", profileImageName: items.randomElement() ?? "etc", profileIntro: items.randomElement() ?? "etc")
+        cell.setData(model)
+        
         return cell
     }
 }
