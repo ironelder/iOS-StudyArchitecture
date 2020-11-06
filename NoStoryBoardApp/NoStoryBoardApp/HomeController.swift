@@ -18,6 +18,7 @@ class HomeController: UIViewController {
         navigationItem.title = "Home"
         self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#E23F61")
         view?.backgroundColor = UIColor.white
+        getMovieData()
         collectionViewInitialized()
     }
     
@@ -41,11 +42,14 @@ class HomeController: UIViewController {
     }
     
     fileprivate func getMovieData(){
+        //apikey = e17c2715face752d9ed1a2a0054aa7d6
+        //exam : https://api.themoviedb.org/3/movie/550?api_key=e17c2715face752d9ed1a2a0054aa7d6
         let headers: HTTPHeaders = [
             "Authorization": "Basic VXNlcm5hbWU6UGFzc3dvcmQ=",
             "Accept": "application/json"
         ]
-        AF.request("https://httpbin.org/headers", headers: headers).responseJSON { response in
+        let apiKey = "e17c2715face752d9ed1a2a0054aa7d6"
+        AF.request("https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)", headers: headers).responseJSON { response in
             debugPrint(response)
         }
     }
