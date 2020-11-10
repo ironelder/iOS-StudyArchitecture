@@ -7,10 +7,12 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class HomeController: UIViewController {
 
     var collectionView: UICollectionView?
+    var movieListDatas: [MovieListCellModel] = []
     let items = ["teble", "darkflower", "etc", "heart", "snow"]
     
     override func viewDidLoad() {
@@ -51,6 +53,23 @@ class HomeController: UIViewController {
         let apiKey = "e17c2715face752d9ed1a2a0054aa7d6"
         AF.request("https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)", headers: headers).responseJSON { response in
             debugPrint(response)
+            switch response.result {
+            case.success(let value):
+                let json = JSON(value)
+                print("json = \(json.type)")
+                let results = json["results"]
+                print("results = \(results.type)")
+                do{
+                    let movieListCellDatas = try JSONDecoder().decode([MovieListCellModel].self, from: results.rawData())
+                    print("movielist = \(movieListCellDatas.count)")
+                    self.movieListDatas.append(contentsOf: movieListCellDatas)
+                    self.collectionView?.reloadData()
+                } catch {
+                    print("error = \(error)")
+                }
+            default:
+                return
+            }
         }
     }
 
@@ -58,7 +77,7 @@ class HomeController: UIViewController {
 
 extension HomeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count * 5
+        return movieListDatas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,8 +85,13 @@ extension HomeController: UICollectionViewDataSource {
             return collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath)
         }
         
-        let model = TableDataModel(titleImageName: items.randomElement() ?? "etc", profileImageName: items.randomElement() ?? "etc", profileIntro: items.randomElement() ?? "etc")
-        cell.setData(model)
+        if movieListDatas.count > 0 {        
+            cell.setMovieData(movieListDatas[indexPath.row])
+        }
+        
+        if cell.isSelected {
+            print("selected = \(indexPath.row)")
+        }
         
         return cell
     }
@@ -76,6 +100,13 @@ extension HomeController: UICollectionViewDataSource {
 extension HomeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width * 0.9, height: collectionView.frame.height * 0.3)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("item = \(movieListDatas[indexPath.row].id)")
+        let vc = DetailController()
+        vc.detailMovieId = movieListDatas[indexPath.row].id
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
