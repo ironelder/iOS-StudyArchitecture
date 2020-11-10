@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ImageItemViewCell: UICollectionViewCell {
+    let baseImageUrl = ""
+    let imageView = UIImageView()
+    let profileImageView = UIImageView()
+    let profileTitleView = UILabel()
+    let profileOverView = UILabel()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializedCell()
@@ -17,42 +24,57 @@ class ImageItemViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initializedCell(){
-        backgroundColor = UIColor.gray
-        
-        // MainImage
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "teble")
-        imageView.backgroundColor = UIColor.blue
-        addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.topAnchor.constraint(equalTo:topAnchor, constant: 10).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6, constant: -10).isActive = true
+    private func initializedCell(){
+        backgroundColor = UIColor.lightGray
         
         // Profile Image
-        let profileImageView = UIImageView()
         profileImageView.image = UIImage(named: "snow")
         profileImageView.backgroundColor = UIColor.orange
         addSubview(profileImageView)
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+        profileImageView.topAnchor.constraint(equalTo:topAnchor, constant: 10).isActive = true
         profileImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        profileImageView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
-        profileImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
+        profileImageView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         
         // Profile Intro
-        let profileIntroView = UILabel()
-        profileIntroView.numberOfLines = 0
-        profileIntroView.text = "Another way to put it; you can’t attach your hand to someone else’s hand unless they are in the room with you. The room being a UIView subview hierarchy, and our hands being either a top, bottom, leading, or trailing NSLayoutConstraint."
-        profileIntroView.backgroundColor = UIColor.green
-        addSubview(profileIntroView)
-        profileIntroView.translatesAutoresizingMaskIntoConstraints = false
-        profileIntroView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
-        profileIntroView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10).isActive = true
-        profileIntroView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        profileIntroView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        profileTitleView.numberOfLines = 1
+        profileTitleView.text = "Title"
+        profileTitleView.backgroundColor = UIColor.green
+        addSubview(profileTitleView)
+        profileTitleView.translatesAutoresizingMaskIntoConstraints = false
+        profileTitleView.topAnchor.constraint(equalTo:topAnchor, constant: 10).isActive = true
+        profileTitleView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10).isActive = true
+        profileTitleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        profileTitleView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
+//        profileIntroView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         
+        profileOverView.numberOfLines = 0
+        profileOverView.text = "OverView"
+        profileOverView.backgroundColor = UIColor.systemOrange
+        addSubview(profileOverView)
+        profileOverView.translatesAutoresizingMaskIntoConstraints = false
+        profileOverView.topAnchor.constraint(equalTo: profileTitleView.bottomAnchor, constant: 5).isActive = true
+        profileOverView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10).isActive = true
+        profileOverView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        profileOverView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        
+    }
+    
+    
+    func setMovieData(_ data: MovieListCellModel) {
+        if let posterPath = data.poster_path {
+            let url = URL(string: "https://image.tmdb.org/t/p/original\(String(posterPath))")
+            profileImageView.kf.setImage(with: url)
+        }
+        profileTitleView.text = data.title
+        profileOverView.text = data.overview
+    }
+    
+    
+    override var isSelected: Bool {
+        didSet {
+            backgroundColor = isSelected ? UIColor.gray : UIColor.lightGray
+        }
     }
 }
