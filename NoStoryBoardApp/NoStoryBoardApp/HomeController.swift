@@ -47,7 +47,7 @@ class HomeController: UIViewController {
         //apikey = e17c2715face752d9ed1a2a0054aa7d6
         //exam : https://api.themoviedb.org/3/movie/550?api_key=e17c2715face752d9ed1a2a0054aa7d6
         let headers: HTTPHeaders = [
-            "Authorization": "Basic VXNlcm5hbWU6UGFzc3dvcmQ=",
+//            "Authorization": "Basic VXNlcm5hbWU6UGFzc3dvcmQ=",
             "Accept": "application/json"
         ]
         let apiKey = "e17c2715face752d9ed1a2a0054aa7d6"
