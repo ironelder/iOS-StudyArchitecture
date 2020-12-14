@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		683468FE258701850025F4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683468FD258701850025F4B3 /* AppDelegate.swift */; };
 		68346900258701850025F4B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683468FF258701850025F4B3 /* SceneDelegate.swift */; };
-		68346902258701850025F4B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346901258701850025F4B3 /* ViewController.swift */; };
 		68346905258701850025F4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68346903258701850025F4B3 /* Main.storyboard */; };
 		68346907258701880025F4B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68346906258701880025F4B3 /* Assets.xcassets */; };
 		6834690A258701880025F4B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68346908258701880025F4B3 /* LaunchScreen.storyboard */; };
 		68346915258701880025F4B3 /* OpenWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68346914258701880025F4B3 /* OpenWeatherAppTests.swift */; };
 		68346920258701880025F4B3 /* OpenWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834691F258701880025F4B3 /* OpenWeatherAppUITests.swift */; };
+		683469402587071D0025F4B3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834693F2587071D0025F4B3 /* MainViewController.swift */; };
+		68346950258746A50025F4B3 /* ProxyModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68346935258703840025F4B3 /* ProxyModule.framework */; };
+		68346951258746A50025F4B3 /* ProxyModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68346935258703840025F4B3 /* ProxyModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +43,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		68346952258746A50025F4B3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				68346951258746A50025F4B3 /* ProxyModule.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		683468FA258701850025F4B3 /* OpenWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683468FD258701850025F4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		683468FF258701850025F4B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		68346901258701850025F4B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68346904258701850025F4B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68346906258701880025F4B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68346909258701880025F4B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +72,7 @@
 		6834691F258701880025F4B3 /* OpenWeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAppUITests.swift; sourceTree = "<group>"; };
 		68346921258701880025F4B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68346930258703840025F4B3 /* ProxyModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProxyModule.xcodeproj; path = ../ProxyModule/ProxyModule.xcodeproj; sourceTree = "<group>"; };
+		6834693F2587071D0025F4B3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68346950258746A50025F4B3 /* ProxyModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +109,7 @@
 				68346913258701880025F4B3 /* OpenWeatherAppTests */,
 				6834691E258701880025F4B3 /* OpenWeatherAppUITests */,
 				683468FB258701850025F4B3 /* Products */,
+				6834694F258746A50025F4B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,13 +126,10 @@
 		683468FC258701850025F4B3 /* OpenWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				683468FD258701850025F4B3 /* AppDelegate.swift */,
-				683468FF258701850025F4B3 /* SceneDelegate.swift */,
-				68346901258701850025F4B3 /* ViewController.swift */,
-				68346903258701850025F4B3 /* Main.storyboard */,
-				68346906258701880025F4B3 /* Assets.xcassets */,
-				68346908258701880025F4B3 /* LaunchScreen.storyboard */,
-				6834690B258701880025F4B3 /* Info.plist */,
+				68346945258707560025F4B3 /* Splash */,
+				68346944258707410025F4B3 /* Resource */,
+				6834693B258706C50025F4B3 /* Application */,
+				6834693A258706A90025F4B3 /* Main */,
 			);
 			path = OpenWeatherApp;
 			sourceTree = "<group>";
@@ -145,6 +160,48 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6834693A258706A90025F4B3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				68346903258701850025F4B3 /* Main.storyboard */,
+				6834693F2587071D0025F4B3 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6834693B258706C50025F4B3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				683468FD258701850025F4B3 /* AppDelegate.swift */,
+				683468FF258701850025F4B3 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		68346944258707410025F4B3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6834690B258701880025F4B3 /* Info.plist */,
+				68346906258701880025F4B3 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		68346945258707560025F4B3 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				68346908258701880025F4B3 /* LaunchScreen.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		6834694F258746A50025F4B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +212,7 @@
 				683468F6258701850025F4B3 /* Sources */,
 				683468F7258701850025F4B3 /* Frameworks */,
 				683468F8258701850025F4B3 /* Resources */,
+				68346952258746A50025F4B3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68346902258701850025F4B3 /* ViewController.swift in Sources */,
+				683469402587071D0025F4B3 /* MainViewController.swift in Sources */,
 				683468FE258701850025F4B3 /* AppDelegate.swift in Sources */,
 				68346900258701850025F4B3 /* SceneDelegate.swift in Sources */,
 			);
@@ -471,7 +529,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLLWK6NGJ9;
-				INFOPLIST_FILE = OpenWeatherApp/Info.plist;
+				INFOPLIST_FILE = OpenWeatherApp/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +548,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MLLWK6NGJ9;
-				INFOPLIST_FILE = OpenWeatherApp/Info.plist;
+				INFOPLIST_FILE = OpenWeatherApp/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
